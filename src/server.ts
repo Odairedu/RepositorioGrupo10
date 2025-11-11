@@ -16,8 +16,8 @@ app.use("/assets", express.static(path.join(__dirname, "../assets")));
 FuncionarioController();
 MedicamentoController();
 
-const PORT = 3000;
+const PORT = 3010;
 app.listen(PORT, () => {
-  console.log("Servidor rodando na porta 3000");
+  console.log("Servidor rodando na porta 3010");
   console.log("Acesse: http://localhost:3000/index.html");
 });

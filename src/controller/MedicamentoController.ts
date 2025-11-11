@@ -4,7 +4,7 @@ import { app } from "../server";
 export function MedicamentoController() {
   const service = new MedicamentoService();
 
-  app.get("/medicamento", (req, res) => {
+  app.get("/api/medicamento", (req, res) => {
     const medicamento = service.getMedicamento();
 
     const medicamentoSemSenha = medicamento.map((medicamento) => ({
@@ -20,7 +20,7 @@ export function MedicamentoController() {
     res.json(medicamentoSemSenha);
   });
 
-  app.post("/medicamento/criar", (req, res) => {
+  app.post("/api/medicamento/criar", (req, res) => {
     try {
       const dadosMedicamento = req.body;
       const novoMedicamento = service.createMedi(dadosMedicamento);
@@ -33,7 +33,7 @@ export function MedicamentoController() {
     }
   });
 
-  app.put("/medicamento/:id", (req, res) => {
+  app.put("/api/medicamento/:id", (req, res) => {
     try {
       const { id } = req.params;
       const dados = req.body;
@@ -58,7 +58,7 @@ export function MedicamentoController() {
     }
   });
 
-  app.get("/medicamento/filtrar", (req, res) => {
+  app.get("/api/medicamento/filtrar", (req, res) => {
     const { nome, dosagem, bula, informacoes, estoque } = req.query;
 
     // Filtro por nome (retorna lista)

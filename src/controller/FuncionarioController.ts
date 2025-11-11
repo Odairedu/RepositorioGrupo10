@@ -4,7 +4,7 @@ import { FuncionarioService } from "../service/FuncionarioService";
 export function FuncionarioController() {
   const service = new FuncionarioService();
 
-  app.get("/funcionarios/ver", (req, res) => {
+  app.get("/api/funcionarios/ver", (req, res) => {
     const funcionario = service.getFuncionarios();
 
     const funcionarioSemSenha = funcionario.map((funcionario) => ({
@@ -17,7 +17,7 @@ export function FuncionarioController() {
     res.json(funcionarioSemSenha);
   });
 
-  app.post("/funcionarios/cadastro", (req, res) => {
+  app.post("/api/funcionarios/cadastro", (req, res) => {
     try {
       const dadosfuncionario = req.body;
       const novofuncionario = service.createUser(dadosfuncionario);
@@ -30,7 +30,7 @@ export function FuncionarioController() {
     }
   });
 
-  app.put("/funcionarios/:email", (req, res) => {
+  app.put("/api/funcionarios/:email", (req, res) => {
     try {
       const { email } = req.params;
       const dados = req.body;
@@ -50,7 +50,7 @@ export function FuncionarioController() {
     }
   });
 
-  app.post("/funcionarios/autenticacao", (req, res) => {
+  app.post("/api/funcionarios/autenticacao", (req, res) => {
     try {
       const { email, senha } = req.body;
       const funcionario = service.autenticar(email, senha);
