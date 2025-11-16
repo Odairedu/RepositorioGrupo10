@@ -1,12 +1,12 @@
 ### FUNCIONARIOS
 
 ### Listar todos os funcionarios
-GET http://localhost:3000/funcionarios/ver
+GET https://grupo10projeto20252.escolatecnicaadelia.info/api/funcionarios/ver
 
 ###
 
 ### Cadastro funcionario
-POST http://localhost:3000/funcionarios/cadastro
+POST https://grupo10projeto20252.escolatecnicaadelia.info/api/funcionarios/cadastro
 content-type: application/json
 
 {
@@ -19,7 +19,7 @@ content-type: application/json
 ###
 
 ### Autenticar funcionario
-POST http://localhost:3000/funcionarios/autenticacao
+POST https://grupo10projeto20252.escolatecnicaadelia.info/api/funcionarios/autenticacao
 content-type: application/json
 
 {
@@ -30,12 +30,12 @@ content-type: application/json
 ### MEDICAMENTO
 
 ### Listar todos os medicamento
-GET http://localhost:3000/medicamento
+GET https://grupo10projeto20252.escolatecnicaadelia.info/api/medicamento
 
 ###
 
 ### Medicamento atualizado com sucesso
-POST http://localhost:3000/medicamento
+POST https://grupo10projeto20252.escolatecnicaadelia.info/api/medicamento
 content-type: application/json
 
 {
@@ -49,7 +49,7 @@ content-type: application/json
 ###
 
 ### Medicamento atualizado com sucesso
-POST http://localhost:3000/medicamentos
+POST https://grupo10projeto20252.escolatecnicaadelia.info/api/medicamentos
 content-type: application/json
 
 {
@@ -63,24 +63,24 @@ content-type: application/json
 ###
 
 ### filtrar medicamentos por nome (retorna lista)
-GET http://localhost:3000/medicamento/filtrar?nome=Paracetamol
+GET https://grupo10projeto20252.escolatecnicaadelia.info/api/medicamento/filtrar?nome=Paracetamol
 
 ###
 
 ### filtrar medicamentos por dosagem (retorna lista)
-GET http://localhost:3000/medicamento/filtrar?dosagem=Tomar%20de%206%20em%206%20horas
+GET https://grupo10projeto20252.escolatecnicaadelia.info/api/medicamento/filtrar?dosagem=Tomar%20de%206%20em%206%20horas
 
 ###
 
 ### filtrar medicamentos por bula (retorna lista)
-GET http://localhost:3000/medicamento/filtrar?bula=leve&informacaoMax=intensa
+GET https://grupo10projeto20252.escolatecnicaadelia.info/api/medicamento/filtrar?bula=leve&informacaoMax=intensa
 
 ###
 
 ### filtrar medicamentos por informacoes (retorna lista)
-GET http://localhost:3000/medicamento/filtrar?informacoes=informacoes
+GET https://grupo10projeto20252.escolatecnicaadelia.info/api/medicamento/filtrar?informacoes=informacoes
 
 ###
 
 ### filtrar medicamentos por estoque (retorna lista)
-GET http://localhost:3000/medicamento/filtrar?estoque=10-30
+GET https://grupo10projeto20252.escolatecnicaadelia.info/api/medicamento/filtrar?estoque=10-30

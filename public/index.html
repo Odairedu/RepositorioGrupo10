@@ -1,393 +1,432 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tela de Login</title>
-    <style> @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-}
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
 
-body {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #E7F0FA;
-}
-
-.container {
-    width: 80%;
-    height: 80vh;
-    display: flex;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
-}
-
-.form-image {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #ffff;
-    padding: 1rem
-}
-
-.form-image img {
-    width: 40rem;
-}
-
-.form {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #E7F0FA;
-    padding: 3rem;
-}
-
-.form-header {
-    margin-bottom: 3rem;
-    display: flex;
-    justify-content: space-between;
-}
-
-.login-button {
-    display: flex;
-    align-items: center;
-}
-
-.login-button button {
-    border: none;
-    background-color: #4169E1;
-    padding: 0.4rem 1rem;
-    border-radius: 5px;
-    cursor: pointer
-}
-
-.login-button button:hover {
-    background-color: #003366;
-}
-
-.login-button button a {
-    text-decoration: none;
-    font-weight: 500;
-    color: #ffff;
-}
-
-.form-header h1::after {
-    content: '';
-    display: block;
-    width: 5rem;
-    height: 0.3rem;
-    background-color: #4169E1;
-    margin: 0 auto;
-    position: absolute;
-    border-radius: 10px;
-}
-
-.input-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 1rem 0;
-}
-
-.input-box {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1.1rem;
-    width: 48%;
-}
-
-.input-box input {
-    margin: 0.6rem 0;
-    padding: 0.8rem 1.2rem;
-    border: none;
-    border-radius: 10px;
-    box-shadow: 1px 1px 6px #0000001c;
-}
-
-.input-box input:hover {
-    background-color: #eeeeee75;
-}
-
-.input-box input:focus-visible {
-    outline: 1px solid #4169E1
-}
-
-.input-box label,
-.gender-title h6 {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: #000000c0;
-}
-
-.input-box input::placeholder {
-    color: #000000be;
-}
-
-.gender-group {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 0.62rem;
-    padding: 0 0.5rem;
-}
-
-.gender-input {
-    display: flex;
-    align-items: center;
-}
-
-.gender-input input {
-    margin-right: 0.35rem;
-}
-
-.gender-input label {
-    font-size: 0.81rem;
-    font-weight: 600;
-    color: #000000c0;
-}
-
-.continue-button button {
-    width: 100%;
-    margin-top: 2.5rem;
-    border: none;
-    background-color: #4169E1;
-    padding: 0.62rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.continue-button button:hover {
-    background-color: #003366;
-}
-
-.continue-button button a {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #ffff;
-}
-
-.forgot-password a {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    margin-top: 5px;
-    margin-bottom: 25px;
-}
-
-.forgot-password a {
-    text-decoration: none;
-    color: #000000c0;
-    font-size: 0.81rem;
-    font-weight: 600;
-}
-
-.forgot-password a:hover {
-    color: #4169E1;
-}
-
-@media screen and (max-width: 1330px) {
-    .form-image {
-        display: none;
-    }
-    .container {
-        width: 70%;
-        height: auto;
-    }
-    .form {
+      body {
         width: 100%;
-        padding: 2rem;
-    }
-}
-
-@media screen and (max-width: 950px) {
-    .container {
-        width: 90%;
-        box-shadow: none;
-    }
-
-    .input-box {
-        width: 100%;
-    }
-
-    .input-group {
-        flex-direction: column;
-        flex-wrap: nowrap;
-        max-height: none;
-        padding-right: 0;
-    }
-
-    .form-header {
-        flex-direction: column;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
         align-items: center;
-        margin-bottom: 2rem;
-    }
+        background: #e7f0fa;
+      }
 
-    .login-button {
-        margin-top: 1rem;
-    }
+      .container {
+        width: 80%;
+        height: 80vh;
+        display: flex;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
+      }
 
-    .gender-inputs {
-        margin-top: 2rem;
-    }
-    .gender-group {
+      .form-image {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffff;
+        padding: 1rem;
+      }
+
+      .form-image img {
+        width: 40rem;
+      }
+
+      .form {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         flex-direction: column;
-    }
-    .gender-input {
-        margin-top: 0.5rem;
-    }
-}
-</style>
-</head>
+        background-color: #e7f0fa;
+        padding: 3rem;
+      }
 
-<body>
+      .form-header {
+        margin-bottom: 3rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .login-button {
+        display: flex;
+        align-items: center;
+      }
+
+      .login-button button {
+        border: none;
+        background-color: #4169e1;
+        padding: 0.4rem 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .login-button button:hover {
+        background-color: #003366;
+      }
+
+      .login-button button a {
+        text-decoration: none;
+        font-weight: 500;
+        color: #ffff;
+      }
+
+      .form-header h1::after {
+        content: "";
+        display: block;
+        width: 5rem;
+        height: 0.3rem;
+        background-color: #4169e1;
+        margin: 0 auto;
+        position: absolute;
+        border-radius: 10px;
+      }
+
+      .input-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem 0;
+      }
+
+      .input-box {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1.1rem;
+        width: 48%;
+      }
+
+      .input-box input {
+        margin: 0.6rem 0;
+        padding: 0.8rem 1.2rem;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 1px 1px 6px #0000001c;
+      }
+
+      .input-box input:hover {
+        background-color: #eeeeee75;
+      }
+
+      .input-box input:focus-visible {
+        outline: 1px solid #4169e1;
+      }
+
+      .input-box label,
+      .gender-title h6 {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #000000c0;
+      }
+
+      .input-box input::placeholder {
+        color: #000000be;
+      }
+
+      .gender-group {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 0.62rem;
+        padding: 0 0.5rem;
+      }
+
+      .gender-input {
+        display: flex;
+        align-items: center;
+      }
+
+      .gender-input input {
+        margin-right: 0.35rem;
+      }
+
+      .gender-input label {
+        font-size: 0.81rem;
+        font-weight: 600;
+        color: #000000c0;
+      }
+
+      .continue-button button {
+        width: 100%;
+        margin-top: 2.5rem;
+        border: none;
+        background-color: #4169e1;
+        padding: 0.62rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .continue-button button:hover {
+        background-color: #003366;
+      }
+
+      .continue-button button a {
+        text-decoration: none;
+        font-size: 0.93rem;
+        font-weight: 500;
+        color: #ffff;
+      }
+
+      .forgot-password a {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 5px;
+        margin-bottom: 25px;
+      }
+
+      .forgot-password a {
+        text-decoration: none;
+        color: #000000c0;
+        font-size: 0.81rem;
+        font-weight: 600;
+      }
+
+      .forgot-password a:hover {
+        color: #4169e1;
+      }
+
+      @media screen and (max-width: 1330px) {
+        .form-image {
+          display: none;
+        }
+        .container {
+          width: 70%;
+          height: auto;
+        }
+        .form {
+          width: 100%;
+          padding: 2rem;
+        }
+      }
+
+      @media screen and (max-width: 950px) {
+        .container {
+          width: 90%;
+          box-shadow: none;
+        }
+
+        .input-box {
+          width: 100%;
+        }
+
+        .input-group {
+          flex-direction: column;
+          flex-wrap: nowrap;
+          max-height: none;
+          padding-right: 0;
+        }
+
+        .form-header {
+          flex-direction: column;
+          align-items: center;
+          margin-bottom: 2rem;
+        }
+
+        .login-button {
+          margin-top: 1rem;
+        }
+
+        .gender-inputs {
+          margin-top: 2rem;
+        }
+        .gender-group {
+          flex-direction: column;
+        }
+        .gender-input {
+          margin-top: 0.5rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
     <div class="container">
-        <div class="form-image">
-            <img src="../assets/img/medicina.png" alt="Medicina">
-        </div>
+      <div class="form-image">
+        <img src="./assets/img/medicina.png" alt="Medicina" />
+      </div>
 
-        <div class="form">
-            <form id="formLogin">
-                <div class="form-header">
-                    <div class="title">
-                        <h1>Entrar</h1>
-                    </div>
-                    <div class="login-button">
-                        <button type="button"><a href="cadastro.html">Cadastre-se</a></button>
-                    </div>
-                </div>
+      <div class="form">
+        <form id="formLogin">
+          <div class="form-header">
+            <div class="title">
+              <h1>Entrar</h1>
+            </div>
+            <div class="login-button">
+              <button type="button">
+                <a href="cadastro.html">Cadastre-se</a>
+              </button>
+            </div>
+          </div>
 
-                <!-- Mensagem de erro/sucesso -->
-                <div id="mensagem" style="display: none; padding: 10px; margin-bottom: 15px; border-radius: 5px; text-align: center;"></div>
+          <!-- Mensagem de erro/sucesso -->
+          <div
+            id="mensagem"
+            style="
+              display: none;
+              padding: 10px;
+              margin-bottom: 15px;
+              border-radius: 5px;
+              text-align: center;
+            "
+          ></div>
 
-                <div class="input-group">
-                    <div class="input-box">
-                        <label for="email">Email</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu Email" required>
-                    </div>
+          <div class="input-group">
+            <div class="input-box">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                placeholder="Digite seu Email"
+                required
+              />
+            </div>
 
-                    <div class="input-box">
-                        <label for="password">Senha</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
-                    </div>
+            <div class="input-box">
+              <label for="password">Senha</label>
+              <input
+                id="password"
+                type="password"
+                name="password"
+                placeholder="Digite sua senha"
+                required
+              />
+            </div>
 
-                    <div class="forgot-password">
-                        <a href="#">Esqueceu a senha?</a>
-                    </div>
-                </div>
+            <div class="forgot-password">
+              <a href="#">Esqueceu a senha?</a>
+            </div>
+          </div>
 
-                <div class="continue-button">
-                    <button type="submit">Login</button>
-                </div>
-            </form>
-        </div>
+          <div class="continue-button">
+            <button type="submit">Login</button>
+          </div>
+        </form>
+      </div>
     </div>
 
     <script>
-        // Pegando o formulário
-        const form = document.getElementById('formLogin');
-        const mensagemDiv = document.getElementById('mensagem');
+      // Pegando o formulário
+      const form = document.getElementById("formLogin");
+      const mensagemDiv = document.getElementById("mensagem");
 
-        // Verificando se há mensagem de sucesso no cadastro
-        window.addEventListener('load', function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.get('cadastro') === 'sucesso') {
-                mostrarMensagem('Cadastro realizado com sucesso! Faça login para continuar.', 'sucesso');
-            }
-        });
+      // Verificando se há mensagem de sucesso no cadastro
+      window.addEventListener("load", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get("cadastro") === "sucesso") {
+          mostrarMensagem(
+            "Cadastro realizado com sucesso! Faça login para continuar.",
+            "sucesso"
+          );
+        }
+      });
 
-        // Função para mostrar mensagem
-        function mostrarMensagem(texto, tipo) {
-            mensagemDiv.textContent = texto;
-            mensagemDiv.style.display = 'block';
-            
-            if (tipo === 'erro') {
-                mensagemDiv.style.backgroundColor = '#ffebee';
-                mensagemDiv.style.color = '#c62828';
-                mensagemDiv.style.border = '1px solid #ef5350';
-            } else {
-                mensagemDiv.style.backgroundColor = '#e8f5e9';
-                mensagemDiv.style.color = '#2e7d32';
-                mensagemDiv.style.border = '1px solid #66bb6a';
-            }
+      // Função para mostrar mensagem
+      function mostrarMensagem(texto, tipo) {
+        mensagemDiv.textContent = texto;
+        mensagemDiv.style.display = "block";
+
+        if (tipo === "erro") {
+          mensagemDiv.style.backgroundColor = "#ffebee";
+          mensagemDiv.style.color = "#c62828";
+          mensagemDiv.style.border = "1px solid #ef5350";
+        } else {
+          mensagemDiv.style.backgroundColor = "#e8f5e9";
+          mensagemDiv.style.color = "#2e7d32";
+          mensagemDiv.style.border = "1px solid #66bb6a";
+        }
+      }
+
+      // Quando o formulário for enviado
+      form.addEventListener("submit", async function (evento) {
+        evento.preventDefault(); // Impede o envio normal do formulário
+
+        // Pegando os valores digitados
+        const email = document.getElementById("email").value;
+        const senha = document.getElementById("password").value;
+
+        // Primeiro, tentando validar com localStorage (cadastro local)
+        const usuariosCadastrados =
+          JSON.parse(localStorage.getItem("usuariosCadastrados")) || [];
+        const usuarioEncontrado = usuariosCadastrados.find(
+          (user) => user.email === email && user.senha === senha
+        );
+
+        if (usuarioEncontrado) {
+          // Login com sucesso usando dados locais!
+          mostrarMensagem(
+            "Login realizado com sucesso! Redirecionando...",
+            "sucesso"
+          );
+
+          // Salvando dados do usuário logado
+          localStorage.setItem(
+            "usuarioLogado",
+            JSON.stringify(usuarioEncontrado)
+          );
+
+          // Redirecionar para a página do depósito após 1 segundo
+          setTimeout(function () {
+            window.location.href = "deposito.html";
+          }, 1000);
+          return;
         }
 
-        // Quando o formulário for enviado
-        form.addEventListener('submit', async function(evento) {
-            evento.preventDefault(); // Impede o envio normal do formulário
-
-            // Pegando os valores digitados
-            const email = document.getElementById('email').value;
-            const senha = document.getElementById('password').value;
-
-            // Primeiro, tentando validar com localStorage (cadastro local)
-            const usuariosCadastrados = JSON.parse(localStorage.getItem('usuariosCadastrados')) || [];
-            const usuarioEncontrado = usuariosCadastrados.find(user => user.email === email && user.senha === senha);
-
-            if (usuarioEncontrado) {
-                // Login com sucesso usando dados locais!
-                mostrarMensagem('Login realizado com sucesso! Redirecionando...', 'sucesso');
-                
-                // Salvando dados do usuário logado
-                localStorage.setItem('usuarioLogado', JSON.stringify(usuarioEncontrado));
-                
-                // Redirecionar para a página do depósito após 1 segundo
-                setTimeout(function() {
-                    window.location.href = 'deposito.html';
-                }, 1000);
-                return;
+        // Se não encontrou no localStorage, tenta no backend
+        try {
+          // Enviando para o backend
+          const resposta = await fetch(
+            "https://grupo10projeto20252.escolatecnicaadelia.info/api/funcionarios/autenticacao",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                email: email,
+                senha: senha,
+              }),
             }
+          );
 
-            // Se não encontrou no localStorage, tenta no backend
-            try {
-                // Enviando para o backend
-                const resposta = await fetch('http://localhost:3000/funcionarios/autenticacao', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        email: email,
-                        senha: senha
-                    })
-                });
+          // Convertendo a resposta para JSON
+          const dados = await resposta.json();
 
-                // Convertendo a resposta para JSON
-                const dados = await resposta.json();
+          if (resposta.ok) {
+            // Login com sucesso!
+            mostrarMensagem(
+              "Login realizado com sucesso! Redirecionando...",
+              "sucesso"
+            );
 
-                if (resposta.ok) {
-                    // Login com sucesso!
-                    mostrarMensagem('Login realizado com sucesso! Redirecionando...', 'sucesso');
-                    
-                    // Salvando dados do usuário (para usar no depósito)
-                    localStorage.setItem('usuarioLogado', JSON.stringify(dados.dados));
-                    
-                    // Redirecionar para a página do depósito após 1 segundo
-                    setTimeout(function() {
-                        window.location.href = 'deposito.html';
-                    }, 1000);
-                } else {
-                    // Erro no login
-                    mostrarMensagem(dados.erro || 'Email ou senha incorretos!', 'erro');
-                }
+            // Salvando dados do usuário (para usar no depósito)
+            localStorage.setItem("usuarioLogado", JSON.stringify(dados.dados));
 
-            } catch (erro) {
-                // Se deu erro no backend e não encontrou no localStorage, mostra erro
-                mostrarMensagem('Email ou senha incorretos!', 'erro');
-                console.error('Erro:', erro);
-            }
-        });
+            // Redirecionar para a página do depósito após 1 segundo
+            setTimeout(function () {
+              window.location.href = "deposito.html";
+            }, 1000);
+          } else {
+            // Erro no login
+            mostrarMensagem(dados.erro || "Email ou senha incorretos!", "erro");
+          }
+        } catch (erro) {
+          // Se deu erro no backend e não encontrou no localStorage, mostra erro
+          mostrarMensagem("Email ou senha incorretos!", "erro");
+          console.error("Erro:", erro);
+        }
+      });
     </script>
-</body>
-
+  </body>
 </html>

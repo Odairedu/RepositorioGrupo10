@@ -400,7 +400,7 @@
         background: #229954;
       }
 
-            .support-bar {
+      .support-bar {
         position: fixed;
         bottom: 0;
         left: 0;
@@ -511,28 +511,23 @@
           </div>
           <div class="stat-card">
             <div class="stat-title">Estoque Normal</div>
-            <div
-              class="stat-value"
-              style="color: #27ae60"
-              id="normalMeds"
-            >
+            <div class="stat-value" style="color: #27ae60" id="normalMeds">
               7
             </div>
           </div>
           <div class="stat-card">
             <div class="stat-title">Estoque baixo</div>
-            <div
-              class="stat-value"
-              style="color: #e74c3c"
-              id="criticalMeds"
-            >
+            <div class="stat-value" style="color: #e74c3c" id="criticalMeds">
               2
             </div>
           </div>
         </div>
 
         <div class="filter-tabs">
-          <button class="tab-button active" onclick="filtrarStatus('todos', event)">
+          <button
+            class="tab-button active"
+            onclick="filtrarStatus('todos', event)"
+          >
             Todos
           </button>
           <button class="tab-button" onclick="filtrarStatus('critico', event)">
@@ -550,7 +545,7 @@
       </main>
     </div>
 
-            <div class="support-bar">
+    <div class="support-bar">
       <a href="suporte.html" class="support-link">
         <span class="support-icon">💬</span>
         Fale conosco
@@ -612,8 +607,9 @@
       // INTEGRAÇÃO COM BACKEND
       // Todos os dados agora vêm do backend através da API
       // --------------------------------------------------------
-      const API_BASE_URL = 'http://localhost:3000';
-      
+      const API_BASE_URL =
+        "https://grupo10projeto20252.escolatecnicaadelia.info/api";
+
       let medicamentos = [];
       let medicamentosFiltrados = [];
 
@@ -639,7 +635,7 @@
           dosagem: medBackend.dosagem || "Não informada",
           bula: medBackend.bula || "Não informada",
           informacoes: medBackend.informacoes || "Não informada",
-          status: calcularStatus(medBackend.estoque, medBackend.quantidadeMax)
+          status: calcularStatus(medBackend.estoque, medBackend.quantidadeMax),
         };
       }
 
@@ -648,15 +644,17 @@
         try {
           const response = await fetch(`${API_BASE_URL}/medicamento`);
           if (!response.ok) {
-            throw new Error('Erro ao carregar medicamentos');
+            throw new Error("Erro ao carregar medicamentos");
           }
           const dadosBackend = await response.json();
           medicamentos = dadosBackend.map(mapearMedicamento);
           medicamentosFiltrados = [...medicamentos];
           renderizarMedicamentos(medicamentosFiltrados);
         } catch (error) {
-          console.error('Erro ao carregar medicamentos:', error);
-          alert('Erro ao carregar medicamentos. Verifique se o servidor está rodando na porta 3000.');
+          console.error("Erro ao carregar medicamentos:", error);
+          alert(
+            "Erro ao carregar medicamentos. Verifique se o servidor está rodando na porta 3000."
+          );
           // Inicializar com array vazio em caso de erro
           medicamentos = [];
           medicamentosFiltrados = [];
@@ -696,9 +694,7 @@
                 <div class="card-body">
                   <div class="stock-info"><strong>Estoque:</strong> ${
                     med.quantidade
-                  }/${
-              med.quantidadeMaxima
-            } un. (${porcentagem}%)</div>
+                  }/${med.quantidadeMaxima} un. (${porcentagem}%)</div>
                   </div>
                 <div class="card-actions">
                   <button class="btn-info" onclick="verDetalhes('${
@@ -726,7 +722,7 @@
         document
           .querySelectorAll(".tab-button")
           .forEach((b) => b.classList.remove("active"));
-        
+
         // Se o evento foi passado, marcar o botão clicado como ativo
         if (event && event.target) {
           event.target.classList.add("active");
@@ -734,11 +730,17 @@
           // Caso contrário, encontrar o botão correspondente ao status
           const buttons = document.querySelectorAll(".tab-button");
           buttons.forEach((btn) => {
-            if (btn.textContent.trim().toLowerCase() === status || 
-                (status === "todos" && btn.textContent.trim().toLowerCase() === "todos") ||
-                (status === "critico" && btn.textContent.trim().toLowerCase().includes("baixo")) ||
-                (status === "atencao" && btn.textContent.trim().toLowerCase().includes("médio")) ||
-                (status === "normal" && btn.textContent.trim().toLowerCase().includes("normal"))) {
+            if (
+              btn.textContent.trim().toLowerCase() === status ||
+              (status === "todos" &&
+                btn.textContent.trim().toLowerCase() === "todos") ||
+              (status === "critico" &&
+                btn.textContent.trim().toLowerCase().includes("baixo")) ||
+              (status === "atencao" &&
+                btn.textContent.trim().toLowerCase().includes("médio")) ||
+              (status === "normal" &&
+                btn.textContent.trim().toLowerCase().includes("normal"))
+            ) {
               btn.classList.add("active");
             }
           });
@@ -783,7 +785,12 @@
         // Buscar no array completo de medicamentos (não apenas nos filtrados)
         const med = medicamentos.find((m) => String(m.id) === idStr);
         if (!med) {
-          console.error('Medicamento não encontrado. ID:', idStr, 'Medicamentos disponíveis:', medicamentos.map(m => m.id));
+          console.error(
+            "Medicamento não encontrado. ID:",
+            idStr,
+            "Medicamentos disponíveis:",
+            medicamentos.map((m) => m.id)
+          );
           alert("Medicamento não encontrado!");
           return;
         }
@@ -819,27 +826,34 @@
       // --------------------------------------------------------
       async function cadastrarMedicamento(e) {
         e.preventDefault();
-        
+
         const quantidadeStr = document.getElementById("cadQuantidade").value;
         const maximaStr = document.getElementById("cadMaxima").value;
         const quantidade = parseInt(quantidadeStr);
         const maxima = parseInt(maximaStr);
         const bula = document.getElementById("cadBula").value.trim();
-        const informacoes = document.getElementById("cadInformacoes").value.trim();
+        const informacoes = document
+          .getElementById("cadInformacoes")
+          .value.trim();
         const nome = document.getElementById("cadNome").value.trim();
-        const dosagem = document.getElementById("cadDose").value.trim() || "Não informada";
-        
+        const dosagem =
+          document.getElementById("cadDose").value.trim() || "Não informada";
+
         // Validações
         if (!nome) {
           alert("Nome do medicamento é obrigatório!");
           return;
         }
         if (isNaN(quantidade) || quantidade < 0) {
-          alert("Quantidade deve ser um número válido e não pode ser negativa!");
+          alert(
+            "Quantidade deve ser um número válido e não pode ser negativa!"
+          );
           return;
         }
         if (isNaN(maxima) || maxima <= 0) {
-          alert("Quantidade máxima deve ser um número válido e maior que zero!");
+          alert(
+            "Quantidade máxima deve ser um número válido e maior que zero!"
+          );
           return;
         }
         if (quantidade > maxima) {
@@ -854,7 +868,7 @@
           alert("Outras informações são obrigatórias!");
           return;
         }
-        
+
         // Preparar dados no formato que o backend espera
         const medicamentoParaBackend = {
           nome: nome,
@@ -862,35 +876,34 @@
           bula: bula,
           informacoes: informacoes,
           estoque: quantidade,
-          quantidadeMax: maxima
+          quantidadeMax: maxima,
         };
 
         try {
           // Enviar para o backend
           const response = await fetch(`${API_BASE_URL}/medicamento/criar`, {
-            method: 'POST',
+            method: "POST",
             headers: {
-              'Content-Type': 'application/json'
+              "Content-Type": "application/json",
             },
-            body: JSON.stringify(medicamentoParaBackend)
+            body: JSON.stringify(medicamentoParaBackend),
           });
 
           if (!response.ok) {
             const errorData = await response.json();
-            throw new Error(errorData.erro || 'Erro ao cadastrar medicamento');
+            throw new Error(errorData.erro || "Erro ao cadastrar medicamento");
           }
 
           const resultado = await response.json();
-          
+
           // Recarregar medicamentos do backend para garantir sincronização
           await carregarMedicamentos();
-          
+
           fecharModal("cadastroModal");
           e.target.reset();
           alert("Medicamento cadastrado com sucesso!");
-          
         } catch (error) {
-          console.error('Erro ao cadastrar medicamento:', error);
+          console.error("Erro ao cadastrar medicamento:", error);
           alert(`Erro ao cadastrar medicamento: ${error.message}`);
         }
       }
